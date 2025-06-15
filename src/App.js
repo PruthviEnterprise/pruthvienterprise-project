@@ -10,7 +10,7 @@ function App() {
         <h3>Stay tuned for something amazing.</h3>
         <FlipClockCountdown
           className="flip-clock"
-          to={new Date("2025-03-15T00:00:00").getTime() + 2424 * 3600 * 1000 + 5000}
+          to={new Date("2025-03-25T00:00:00").getTime() + 2424 * 3600 * 1000 + 5000}
           labels={["DAYS", "HOURS", "MINUTES", "SECONDS"]}
           duration={0.5}
         />
