@@ -145,17 +145,83 @@ export default function Header() {
                     {/* Submenu */}
                     {open && (
                       <div className="ms-3 flex flex-col space-y-1 animate-fadeIn">
-                        <a href="/manpower-services" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Manpower Services</a>
-                        <a href="/fire-safety" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Fire Safety</a>
-                        <a href="/health-supplies" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Health Supplies</a>
-                        <a href="/furniture-materials" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Furniture Materials</a>
-                        <a href="/electric-gadgets" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Electric Gadgets</a>
-                        <a href="/stationery-materials" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Stationery Materials</a>
-                        <a href="/media-marketing" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Media Marketing</a>
-                        <a href="/video-production" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Video Production</a>
-                        <a href="/design-printing" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Design Printing</a>
-                        <a href="/outdoor-ads" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Outdoor Ads</a>
-                        <a href="/event-management" className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"> └ Event Management</a>
+                        <a
+                          href="/manpower-services"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Manpower Services
+                        </a>
+                        <a
+                          href="/event-management"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Event Management
+                        </a>
+                        <a
+                          href="/fire-safety"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Fire Safety
+                        </a>
+                        <a
+                          href="/health-supplies"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Health Supplies
+                        </a>
+                        <a
+                          href="/furniture-materials"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Furniture Materials
+                        </a>
+                        <a
+                          href="/electric-gadgets"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Electric Gadgets
+                        </a>
+                        <a
+                          href="/stationery-materials"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Stationery Materials
+                        </a>
+                        <a
+                          href="/media-marketing"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Media Marketing
+                        </a>
+                        <a
+                          href="/video-production"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Video Production
+                        </a>
+                        <a
+                          href="/design-printing"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Design Printing
+                        </a>
+                        <a
+                          href="/outdoor-ads"
+                          className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
+                        >
+                          {" "}
+                          └ Outdoor Ads
+                        </a>
                       </div>
                     )}
                   </div>
@@ -174,9 +240,11 @@ export default function Header() {
                 </div>
 
                 <div className="mt-6">
-                  <Button className="w-full bg-[#008FD5] hover:bg-[#0078b0]">
-                    CONTACT US
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="bg-[#15999F] hover:bg-[#15989f] dark:text-white transform hover:scale-105 transition-all cursor-pointer">
+                      CONTACT US
+                    </Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
@@ -222,7 +290,12 @@ export default function Header() {
               >
                 Manpower Services
               </Link>
-
+              <Link
+                href="/event-management"
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                Event Management
+              </Link>
               <Link
                 href="/fire-safety"
                 className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -277,12 +350,6 @@ export default function Header() {
               >
                 Outdoor Ads
               </Link>
-              <Link
-                href="/event-management"
-                className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                Event Management
-              </Link>
             </div>
           </div>
 
@@ -302,9 +369,11 @@ export default function Header() {
 
         {/* Desktop Contact + Theme Toggle */}
         <div className="hidden lg:flex justify-around gap-7 ms-7">
-          <Button className="bg-[#15999F] hover:bg-[#15989f] dark:text-white transform hover:scale-105 transition-all cursor-pointer">
-            CONTACT US
-          </Button>
+          <Link href="/contact">
+            <Button className="bg-[#15999F] hover:bg-[#15989f] dark:text-white transform hover:scale-105 transition-all cursor-pointer">
+              CONTACT US
+            </Button>
+          </Link>
 
           <Button
             variant="ghost"

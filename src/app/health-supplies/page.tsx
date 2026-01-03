@@ -28,6 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
+import Head from "next/head";
 
 const HealthSupplies = () => {
   const services = [
@@ -101,6 +102,89 @@ const HealthSupplies = () => {
 
   return (
     <>
+      <Head>
+        <title>Health Supplies & Medical Equipment | Pruthvi Enterprise</title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise supplies medical-grade PPE kits, sanitization products, first-aid equipment, and healthcare essentials for hospitals, industries, and workplaces."
+        />
+
+        <meta
+          name="keywords"
+          content="health supplies, PPE kits supplier, medical consumables, first aid supplies, sanitization products, healthcare equipment India"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Health Supplies – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Reliable supplier of PPE kits, medical consumables, sanitization products, and first-aid solutions for healthcare and industries."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/health-supplies"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Health Supplies & Medical Equipment"
+        />
+        <meta
+          name="twitter:description"
+          content="Certified PPE kits, medical consumables, and hygiene supplies by Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/health-supplies"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Health Supplies",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: "IN",
+              description:
+                "Supply of PPE kits, medical consumables, sanitization products, and emergency first-aid solutions for healthcare, commercial, and industrial workplaces.",
+              serviceType: [
+                "PPE Kits & Safety Wear",
+                "Medical Consumables",
+                "Sanitization & Hygiene Products",
+                "Emergency & First-Aid Supplies",
+              ],
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -108,9 +192,7 @@ const HealthSupplies = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -167,9 +249,7 @@ const HealthSupplies = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/health-supplies.jpg"
-                    }
+                    src={"/puruthvienterprise/health-supplies.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -190,9 +270,7 @@ const HealthSupplies = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/health-supplies-1.jpg"
-                  }
+                  src={"/puruthvienterprise/health-supplies-1.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

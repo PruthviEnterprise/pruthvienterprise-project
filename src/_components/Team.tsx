@@ -3,31 +3,31 @@ import { Linkedin, Twitter, Mail } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Sarah Johnson",
+    name: "Manpower services",
     role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    bio: "15+ years of experience in business strategy and leadership",
+    image: "/puruthvienterprise/manpower-1.jpg",
+    bio: "Providing skilled and reliable workforce staffing solutions for businesses of all sizes.",
     delay: "delay-100"
   },
   {
-    name: "Michael Chen",
+    name: "Event Management",
     role: "CTO",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    bio: "Expert in technology innovation and digital transformation",
+    image: "/puruthvienterprise/event-management-1.jpg",
+    bio: "Professional management for corporate events, exhibitions, launches, and celebrations.",
     delay: "delay-200"
   },
   {
-    name: "Elena Rodriguez",
+    name: "Fire Safety",
     role: "Head of Marketing",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    bio: "Specializes in brand development and marketing strategy",
+    image: "/puruthvienterprise/fire-safety-2.jpg",
+    bio: "Installation, inspection, and supply of reliable fire safety equipment and systems.",
     delay: "delay-300"
   },
   {
-    name: "David Wilson",
+    name: "Health Supplies",
     role: "Financial Advisor",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    bio: "Expert in financial planning and investment strategy",
+    image: "/puruthvienterprise/health-supplies-1.jpg",
+    bio: "Supplying essential healthcare materials, PPE kits, medical tools, and hygiene products.",
     delay: "delay-400"
   }
 ];
@@ -51,16 +51,15 @@ const Team = () => {
   }, []);
 
   return (
-    <section id="team" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="team" className="py-20 md:py-32 relative overflow-hidden bg-gray-100 dark:bg-gray-800/40">
       <div className="container relative z-10 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-animation">
-          <h2 className="text-sm font-medium text-primary mb-3">OUR TEAM</h2>
+          <h2 className="text-sm font-medium text-primary mb-3">OUR Businesses</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-6">
-            Meet Our Expert Team
+          Explore Our Diverse Business Verticals
           </h3>
           <p className="text-muted-foreground">
-            Our team of experienced professionals is dedicated to helping your business succeed.
-            With diverse backgrounds and expertise, we bring a wealth of knowledge to every project.
+          We operate across multiple business domains, delivering reliable solutions and services tailored to different industry needs. Each business vertical is managed with expertise, commitment, and a focus on quality outcomes.
           </p>
         </div>
         
@@ -80,12 +79,12 @@ const Team = () => {
               
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent text-white p-6">
                 <h4 className="text-xl font-semibold">{member.name}</h4>
-                <p className="text-primary-foreground/80 mb-2">{member.role}</p>
+                {/* <p className="text-primary-foreground/80 mb-2">{member.role}</p> */}
                 <p className="text-sm text-primary-foreground/70 mb-4 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                   {member.bio}
                 </p>
                 
-                <div className="flex space-x-3 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                {/* <div className="flex space-x-3 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                   <a href="#" className="text-white hover:text-primary-foreground/80 transition-colors">
                     <Linkedin size={18} />
                   </a>
@@ -95,7 +94,7 @@ const Team = () => {
                   <a href="#" className="text-white hover:text-primary-foreground/80 transition-colors">
                     <Mail size={18} />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

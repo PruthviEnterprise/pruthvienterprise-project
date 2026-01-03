@@ -1,11 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Delete, Download, Eye, Mail, Trash } from "lucide-react";
+import { Download, Eye, Trash } from "lucide-react";
 import DataTable from "@/app/admin/DataTable";
 import AdminLayout from "@/app/admin/AdminLayout";
-import { useEffect, useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -19,7 +20,15 @@ import {
 import { toast } from "sonner";
 
 const CareerSubmissions = () => {
-  // Mock data - would come from database
+  const router = useRouter();
+
+  // 🔒 Auth protection
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isAdminLoggedIn");
+    if (!isLoggedIn) {
+      router.replace("/admin/login");
+    }
+  }, [router]);
 
   const [contacts, setCotacts] = useState([]);
   const [selectedRow, setSelectedRow] = useState<any>(null);
@@ -39,31 +48,14 @@ const CareerSubmissions = () => {
     FetchCareers();
   }, []);
 
-  const getStatusVariant = (status: string) => {
-    switch (status.toLowerCase()) {
-      case "new":
-        return "secondary";
-      case "reviewed":
-        return "default";
-      case "interview":
-        return "outline";
-      case "hired":
-        return "default";
-      case "rejected":
-        return "destructive";
-      default:
-        return "secondary";
-    }
-  };
-
   const handleDownloadResume = (resumeUrl: string, name: string) => {
-    toast.warning("Delete Action", {
-      description: `Are you sure you want to delete ${name}'s resume?`,
+    toast.warning("Downloading Resume", {
+      description: `Downloading ${name}'s resume.`,
     });
-    // Mock download - would implement actual file download
+
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = `${name}-resume.pdf`; // Customize file name
+    link.download = `${name}-resume.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -75,73 +67,40 @@ const CareerSubmissions = () => {
 
   const handleDeleteConfirm = async () => {
     if (selectedRow) {
-      // TODO: call API to delete
       try {
         const response = await fetch(`/api/careers/${selectedRow?._id}`, {
           method: "DELETE",
         });
         const data = await response.json();
+
         if (data?.data?.success) {
           const filtering = contacts.filter(
-            (res: any) => res?._id != selectedRow?._id
+            (res: any) => res?._id !== selectedRow?._id
           );
-
           setCotacts(filtering);
         }
       } catch (error) {
         console.error(error);
       }
+
       setOpen(false);
       toast("Deleted", {
         description: `${selectedRow.name}'s submission has been deleted.`,
       });
     }
   };
+
   const columns = [
-    {
-      key: "name",
-      label: "Name",
-      sortable: true,
-    },
-    {
-      key: "email",
-      label: "Email",
-      sortable: true,
-    },
-    {
-      key: "phoneNumber",
-      label: "Mobile",
-      sortable: false,
-    },
-    {
-      key: "department",
-      label: "Department",
-      sortable: true,
-    },
-    // {
-    //   key: "position",
-    //   label: "Position",
-    //   sortable: true,
-    // },
-    // {
-    //   key: "experience",
-    //   label: "Experience",
-    //   sortable: true,
-    // },
+    { key: "name", label: "Name", sortable: true },
+    { key: "email", label: "Email", sortable: true },
+    { key: "phoneNumber", label: "Mobile", sortable: false },
+    { key: "department", label: "Department", sortable: true },
     {
       key: "createdAt",
       label: "Date",
       sortable: true,
       render: (value: string) => new Date(value).toLocaleDateString(),
     },
-    // {
-    //   key: "status",
-    //   label: "Status",
-    //   sortable: true,
-    //   render: (value: string) => (
-    //     <Badge variant={getStatusVariant(value)}>{value}</Badge>
-    //   ),
-    // },
     {
       key: "actions",
       label: "Actions",
@@ -155,6 +114,7 @@ const CareerSubmissions = () => {
           >
             <Download className="h-4 w-4" />
           </Button>
+
           <Button
             variant="ghost"
             size="sm"
@@ -162,6 +122,7 @@ const CareerSubmissions = () => {
           >
             <Eye className="h-4 w-4" />
           </Button>
+
           <Button
             variant="ghost"
             size="sm"
@@ -198,7 +159,7 @@ const CareerSubmissions = () => {
         />
       </div>
 
-      {/* 🔹 Delete Confirmation Dialog */}
+      {/* Delete Confirmation Dialog */}
       <AlertDialog open={open} onOpenChange={setOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>

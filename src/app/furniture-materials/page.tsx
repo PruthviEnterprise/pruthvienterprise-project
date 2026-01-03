@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const FurnitureMaterials = () => {
   const services = [
     {
@@ -101,6 +101,91 @@ const FurnitureMaterials = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Furniture Materials & Interior Supplies | Pruthvi Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise supplies premium furniture materials, laminates, veneers, hardware, and interior materials for commercial, residential, and industrial projects."
+        />
+
+        <meta
+          name="keywords"
+          content="furniture materials supplier, laminates, veneers, plywood, interior material supplier, furniture hardware, modular furniture material"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Furniture Materials – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Reliable supplier of high-quality furniture materials, fittings, laminates, and interior supplies for projects of all sizes."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/furniture-materials"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Furniture Materials & Interior Supplies"
+        />
+        <meta
+          name="twitter:description"
+          content="Premium furniture and interior materials supplied by Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/furniture-materials"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Furniture Materials Supply",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: "IN",
+              description:
+                "Supply of premium furniture materials including laminates, veneers, wood panels, hardware, and interior solutions for residential, commercial, and industrial projects.",
+              serviceType: [
+                "Bulk Furniture Materials",
+                "Customized Material Sourcing",
+                "Contract-Based Supply",
+                "Inventory & Logistics Management",
+              ],
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -108,9 +193,7 @@ const FurnitureMaterials = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -167,9 +250,7 @@ const FurnitureMaterials = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/furniture-materials-1.jpg"
-                    }
+                    src={"/puruthvienterprise/furniture-materials-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -190,9 +271,7 @@ const FurnitureMaterials = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/furniture-materials-2.jpg"
-                  }
+                  src={"/puruthvienterprise/furniture-materials-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

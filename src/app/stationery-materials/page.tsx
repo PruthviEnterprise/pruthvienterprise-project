@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const StationeryMaterials = () => {
   const services = [
     {
@@ -100,6 +100,89 @@ const StationeryMaterials = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Stationery Materials Supplier | Office & Industrial Supplies – Pruthvi
+          Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise is a trusted stationery materials supplier providing office supplies, paper products, files, packaging materials, and corporate stationery with quality assurance and timely delivery."
+        />
+
+        <meta
+          name="keywords"
+          content="stationery supplier India, office stationery, industrial stationery, paper products, office supplies distributor, files and folders, corporate stationery Gujarat, Pruthvi Enterprise"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Stationery Materials Supplier – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="High-quality stationery materials for offices, industries, schools, and commercial spaces with reliable supply and competitive pricing."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/stationery-materials"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/stationery-materials.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Stationery Materials Supplier | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="Complete range of office and industrial stationery materials with consistent quality and on-time delivery."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/stationery-materials.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/stationery-materials"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "Stationery Materials & Office Supplies",
+              brand: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+              },
+              url: "https://www.pruthvienterprise.in/stationery-materials",
+              description:
+                "Pruthvi Enterprise supplies high-quality stationery materials including office essentials, paper products, files, and packaging items for corporate, industrial, and commercial use.",
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -107,9 +190,7 @@ const StationeryMaterials = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -170,9 +251,7 @@ const StationeryMaterials = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/stationery-materials-2.jpg"
-                    }
+                    src={"/puruthvienterprise/stationery-materials-2.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -193,9 +272,7 @@ const StationeryMaterials = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/stationery-materials-1.jpg"
-                  }
+                  src={"/puruthvienterprise/stationery-materials-1.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

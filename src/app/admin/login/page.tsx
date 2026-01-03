@@ -1,11 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Eye, EyeOff, LogIn } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
@@ -20,22 +26,34 @@ export default function AdminLogin() {
   const router = useRouter()
   const { toast } = useToast()
 
+  // ✅ If already logged in, redirect to dashboard
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isAdminLoggedIn")
+    if (isLoggedIn) {
+      router.replace("/admin/dashboard")
+    }
+  }, [router])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError("")
 
-    // Simulated login logic
     setTimeout(() => {
-      if (email === "admin@company.com" && password === "admin123") {
+      if (email === "pruthvienterprise0707@gmail.com" && password === "pruthvi0707er") {
+        // ✅ Save login state
+        localStorage.setItem("isAdminLoggedIn", "true")
+
         toast({
           title: "Login Successful",
           description: "Welcome to the admin dashboard!",
         })
+
         router.push("/admin/dashboard")
       } else {
         setError("Invalid email or password. Try admin@company.com / admin123")
       }
+
       setLoading(false)
     }, 1000)
   }
@@ -49,6 +67,7 @@ export default function AdminLogin() {
             Enter your credentials to access the admin dashboard
           </CardDescription>
         </CardHeader>
+
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
@@ -87,7 +106,11 @@ export default function AdminLogin() {
                   className="absolute right-2 top-1/2 -translate-y-1/2"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  {showPassword ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
+                  )}
                 </Button>
               </div>
             </div>
@@ -107,13 +130,15 @@ export default function AdminLogin() {
             </Button>
           </form>
 
-          <div className="mt-6 p-4 bg-muted rounded-lg">
+          {/* <div className="mt-6 p-4 bg-muted rounded-lg">
             <p className="text-sm text-muted-foreground">
-              <strong>Demo Credentials:</strong><br />
-              Email: admin@company.com<br />
+              <strong>Demo Credentials:</strong>
+              <br />
+              Email: admin@company.com
+              <br />
               Password: admin123
             </p>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>

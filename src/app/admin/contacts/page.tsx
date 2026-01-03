@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Eye, Mail, Trash } from "lucide-react";
 import DataTable from "@/app/admin/DataTable";
 import AdminLayout from "@/app/admin/AdminLayout";
-import { useEffect, useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -18,7 +19,15 @@ import {
 import { toast } from "sonner";
 
 const ContactSubmissions = () => {
-  // Mock data - would come from database
+  const router = useRouter();
+
+  // 🔒 Auth protection
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isAdminLoggedIn");
+    if (!isLoggedIn) {
+      router.replace("/admin/login");
+    }
+  }, [router]);
 
   const [contacts, setCotacts] = useState([]);
   const [selectedRow, setSelectedRow] = useState<any>(null);
@@ -40,54 +49,26 @@ const ContactSubmissions = () => {
 
   const handleDeleteConfirm = async () => {
     if (selectedRow) {
-      // TODO: call API to delete
       try {
         const response = await fetch(`/api/contact/${selectedRow?._id}`, {
           method: "DELETE",
         });
         const data = await response.json();
+
         if (data?.data?.success) {
           const filtering = contacts.filter(
-            (res: any) => res?._id != selectedRow?._id
+            (res: any) => res?._id !== selectedRow?._id
           );
-
           setCotacts(filtering);
         }
       } catch (error) {
         console.error(error);
       }
+
       setOpen(false);
       toast.warning("Deleted", {
         description: `${selectedRow.name}'s submission has been deleted.`,
       });
-    }
-  };
-
-  const getStatusVariant = (status: string) => {
-    switch (status.toLowerCase()) {
-      case "pending":
-        return "secondary";
-      case "responded":
-        return "default";
-      case "in progress":
-        return "outline";
-      case "resolved":
-        return "default";
-      default:
-        return "secondary";
-    }
-  };
-
-  const getPriorityVariant = (priority: string) => {
-    switch (priority.toLowerCase()) {
-      case "high":
-        return "destructive";
-      case "medium":
-        return "default";
-      case "low":
-        return "secondary";
-      default:
-        return "secondary";
     }
   };
 
@@ -102,25 +83,11 @@ const ContactSubmissions = () => {
     toast.success("Email Sent", {
       description: `Email sent to ${name} at ${email}`,
     });
-    // Mock email - would implement actual email sending
   };
 
   const columns = [
-    {
-      key: "name",
-      label: "Name",
-      sortable: true,
-    },
-    {
-      key: "email",
-      label: "Email",
-      sortable: true,
-    },
-    // {
-    //   key: "phone",
-    //   label: "Phone",
-    //   sortable: false,
-    // },
+    { key: "name", label: "Name", sortable: true },
+    { key: "email", label: "Email", sortable: true },
     {
       key: "subject",
       label: "Subject",
@@ -147,22 +114,6 @@ const ContactSubmissions = () => {
       sortable: true,
       render: (value: string) => new Date(value).toLocaleDateString(),
     },
-    // {
-    //   key: "priority",
-    //   label: "Priority",
-    //   sortable: true,
-    //   render: (value: string) => (
-    //     <Badge variant={getPriorityVariant(value)}>{value}</Badge>
-    //   ),
-    // },
-    // {
-    //   key: "status",
-    //   label: "Status",
-    //   sortable: true,
-    //   render: (value: string) => (
-    //     <Badge variant={getStatusVariant(value)}>{value}</Badge>
-    //   ),
-    // },
     {
       key: "actions",
       label: "Actions",
@@ -173,15 +124,14 @@ const ContactSubmissions = () => {
             variant="ghost"
             size="sm"
             onClick={() => handleViewMessage(row.name, row.message)}
-            title="View full message"
           >
             <Eye className="h-4 w-4" />
           </Button>
+
           <Button
             variant="ghost"
             size="sm"
             onClick={() => handleSendEmail(row.email, row.name)}
-            title="Send email"
           >
             <Mail className="h-4 w-4" />
           </Button>
@@ -193,7 +143,6 @@ const ContactSubmissions = () => {
               setSelectedRow(row);
               setOpen(true);
             }}
-            title="Send email"
           >
             <Trash className="h-4 w-4" />
           </Button>
@@ -223,7 +172,7 @@ const ContactSubmissions = () => {
         />
       </div>
 
-      {/* 🔹 Delete Confirmation Dialog */}
+      {/* Delete Confirmation */}
       <AlertDialog open={open} onOpenChange={setOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>

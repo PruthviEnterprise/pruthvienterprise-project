@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const MediaMarketing = () => {
   const services = [
     {
@@ -99,6 +99,90 @@ const MediaMarketing = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Media Marketing Services | Digital Branding & Advertising – Pruthvi
+          Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise provides professional media marketing services including social media management, digital advertising, creative content, and brand promotion to grow your business online."
+        />
+
+        <meta
+          name="keywords"
+          content="media marketing services, digital marketing company India, social media marketing, online advertising, brand promotion, content marketing, creative agency Gujarat, Pruthvi Enterprise"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Media Marketing Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Grow your brand online with expert media marketing, creative content, and result-driven digital campaigns by Pruthvi Enterprise."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/media-marketing"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/media-marketing.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Media Marketing Services | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="Professional digital marketing, social media management, creative content, and brand promotion services."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/media-marketing.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/media-marketing"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Media Marketing & Digital Branding",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+              url: "https://www.pruthvienterprise.in/media-marketing",
+              description:
+                "Pruthvi Enterprise offers complete media marketing solutions including social media management, digital advertising, creative content production, and brand strategy to help businesses grow online.",
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -106,9 +190,7 @@ const MediaMarketing = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -168,9 +250,7 @@ const MediaMarketing = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/media-marketing-1.jpg"
-                    }
+                    src={"/puruthvienterprise/media-marketing-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -191,9 +271,7 @@ const MediaMarketing = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/media-marketing-2.jpg"
-                  }
+                  src={"/puruthvienterprise/media-marketing-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

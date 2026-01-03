@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const ElectricGadgets = () => {
   const services = [
     {
@@ -76,8 +76,8 @@ const ElectricGadgets = () => {
         "Tailored solutions for wholesalers, retailers, corporate buyers, and project contractors.",
       features: [
         "Competitive bulk pricing",
-        "Assured quality and brand authenticity",        
-        "Consistent supply and stock availability",        
+        "Assured quality and brand authenticity",
+        "Consistent supply and stock availability",
         "On-time logistics support",
       ],
     },
@@ -103,6 +103,89 @@ const ElectricGadgets = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Electric Gadgets Supplier & Electronics Distributor | Pruthvi
+          Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise is a trusted electric gadgets and electronics supplier offering smart devices, office electronics, industrial equipment, and consumer gadgets with quality assurance and fast delivery."
+        />
+
+        <meta
+          name="keywords"
+          content="electric gadgets supplier, electronics distributor India, smart devices supplier, office electronics, industrial electrical equipment, LED lights, power backup solutions, Pruthvi Enterprise Gujarat"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Electric Gadgets & Electronics Supplier – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="High-quality electric gadgets and electronics for homes, offices, and industries. Verified brands, competitive pricing, and reliable delivery."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/electric-gadgets"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/electric-gadgets.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Electric Gadgets Supplier | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="Premium electric gadgets and electronic products for home, office, and industrial use with quality assurance and fast delivery."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/electric-gadgets.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/electric-gadgets"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "Electric Gadgets & Electronics Supply",
+              brand: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+              },
+              url: "https://www.pruthvienterprise.in/electric-gadgets",
+              description:
+                "Pruthvi Enterprise provides high-quality electric gadgets including consumer electronics, office equipment, smart devices, and industrial electrical solutions with verified brands and reliable delivery.",
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -110,9 +193,7 @@ const ElectricGadgets = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -170,9 +251,7 @@ const ElectricGadgets = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/electric-gadgets-1.jpg"
-                    }
+                    src={"/puruthvienterprise/electric-gadgets-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -193,9 +272,7 @@ const ElectricGadgets = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/electric-gadgets-2.jpg"
-                  }
+                  src={"/puruthvienterprise/electric-gadgets-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

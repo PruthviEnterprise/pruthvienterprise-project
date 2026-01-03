@@ -28,6 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
+import Head from "next/head";
 
 const OutdoorAds = () => {
   const services = [
@@ -99,6 +100,87 @@ const OutdoorAds = () => {
 
   return (
     <>
+      <Head>
+        <title>Outdoor Advertising Solutions | Pruthvi Enterprise</title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise provides high-impact outdoor advertising solutions including billboards, hoardings, transit media, unipoles, and digital outdoor displays (DOOH) to maximize brand visibility."
+        />
+
+        <meta
+          name="keywords"
+          content="outdoor advertising, billboards, hoardings, unipoles, transit media, DOOH, digital outdoor advertising, brand promotion, Pruthvi Enterprise"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Outdoor Advertising Solutions – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Creative and strategic outdoor advertising services including billboards, transit media, unipoles, and digital displays to drive brand visibility and ROI."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/outdoor-ads"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/outdoor-ads.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Outdoor Advertising Solutions | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="High-impact outdoor advertising including billboards, hoardings, unipoles, transit media, and digital outdoor displays by Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/outdoor-ads.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/outdoor-ads"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Outdoor Advertising Solutions",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+              url: "https://www.pruthvienterprise.in/outdoor-ads",
+              description:
+                "Pruthvi Enterprise offers strategic outdoor advertising solutions including billboards, hoardings, unipoles, transit media, and digital outdoor displays to enhance brand visibility and engagement.",
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -106,9 +188,7 @@ const OutdoorAds = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -166,9 +246,7 @@ const OutdoorAds = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/outdoor-ads-1.jpg"
-                    }
+                    src={"/puruthvienterprise/outdoor-ads-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -189,9 +267,7 @@ const OutdoorAds = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/outdoor-ads-2.jpg"
-                  }
+                  src={"/puruthvienterprise/outdoor-ads-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

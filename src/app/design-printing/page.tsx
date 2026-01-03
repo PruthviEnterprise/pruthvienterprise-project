@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const DesignPrinting = () => {
   const services = [
     {
@@ -99,6 +99,89 @@ const DesignPrinting = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Creative Design & Professional Printing Services | Pruthvi Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise offers creative design and professional printing services including branding, corporate identity, marketing materials, large-format printing, and office printing solutions."
+        />
+
+        <meta
+          name="keywords"
+          content="design services, printing services, corporate branding, marketing materials printing, large format printing, office printing, visual identity, Pruthvi Enterprise"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Design & Printing Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Creative design and professional printing services for corporate branding, marketing materials, large-format prints, and office printing by Pruthvi Enterprise."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/design-printing"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/design-printing.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Design & Printing Services | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="High-quality creative design and printing solutions including branding, marketing materials, large-format and office prints."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/design-printing.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/design-printing"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Design & Professional Printing Services",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+              url: "https://www.pruthvienterprise.in/design-printing",
+              description:
+                "Pruthvi Enterprise provides creative design and professional printing services including corporate branding, marketing materials, large-format printing, and office printing solutions.",
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -106,9 +189,7 @@ const DesignPrinting = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -166,9 +247,7 @@ const DesignPrinting = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/design-printing-1.jpg"
-                    }
+                    src={"/puruthvienterprise/design-printing-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -189,9 +268,7 @@ const DesignPrinting = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/design-printing-2.jpg"
-                  }
+                  src={"/puruthvienterprise/design-printing-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

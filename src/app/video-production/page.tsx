@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const VideoProduction = () => {
   const services = [
     {
@@ -100,6 +100,90 @@ const VideoProduction = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Professional Video Production Services | Corporate & Marketing Videos
+          – Pruthvi Enterprise
+        </title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise offers professional video production services including corporate videos, promotional films, event coverage, and animated explainers to elevate your brand communication."
+        />
+
+        <meta
+          name="keywords"
+          content="video production services, corporate video makers, promotional video company, event videography, animation videos, brand films, marketing videos, Pruthvi Enterprise"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Video Production Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="High-quality corporate, promotional, and event videos created with creativity, technology, and strategy by Pruthvi Enterprise."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/video-production"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/video-production.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Video Production Services | Pruthvi Enterprise"
+        />
+        <meta
+          name="twitter:description"
+          content="Professional corporate videos, marketing films, event coverage, and animated explainer videos."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/video-production.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/video-production"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Video Production & Visual Content Creation",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "India",
+              },
+              url: "https://www.pruthvienterprise.in/video-production",
+              description:
+                "Pruthvi Enterprise provides complete video production services including corporate videos, promotional films, event coverage, and animated explainer videos to help brands communicate effectively.",
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -107,9 +191,7 @@ const VideoProduction = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -167,9 +249,7 @@ const VideoProduction = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/video-production-2.jpg"
-                    }
+                    src={"/puruthvienterprise/video-production-2.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -190,9 +270,7 @@ const VideoProduction = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/video-production-1.jpg"
-                  }
+                  src={"/puruthvienterprise/video-production-1.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

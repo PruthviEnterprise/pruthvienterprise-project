@@ -26,6 +26,16 @@ const features = [
     link: "/manpower-services",
   },
   {
+    title: "Event Management",
+    description:
+      "Professional management for corporate events, exhibitions, launches, and celebrations.",
+    icon: (
+      <CalendarCheck className="h-12 w-12 p-2 bg-primary/10 text-primary rounded-xl" />
+    ),
+    delay: "delay-200",
+    link: "/event-management",
+  },
+  {
     title: "Fire Safety",
     description:
       "Installation, inspection, and supply of reliable fire safety equipment and systems.",
@@ -115,16 +125,7 @@ const features = [
     delay: "delay-100",
     link: "/outdoor-ads",
   },
-  {
-    title: "Event Management",
-    description:
-      "Professional management for corporate events, exhibitions, launches, and celebrations.",
-    icon: (
-      <CalendarCheck className="h-12 w-12 p-2 bg-primary/10 text-primary rounded-xl" />
-    ),
-    delay: "delay-200",
-    link: "/event-management",
-  },
+ 
 ];
 
 const Features = () => {

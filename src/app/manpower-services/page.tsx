@@ -28,6 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
+import Head from "next/head";
 const ManpowerServices = () => {
   const services = [
     {
@@ -100,6 +101,86 @@ const ManpowerServices = () => {
 
   return (
     <>
+      <Head>
+        <title>Manpower & Placement Services | Pruthvi Enterprise</title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise provides professional manpower and placement services including temporary staffing, permanent recruitment, contract hiring, and payroll management across India."
+        />
+
+        <meta
+          name="keywords"
+          content="manpower services, placement agency Gujarat, staffing company India, temporary staffing, permanent recruitment, contract staffing, payroll management"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Manpower & Placement Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="Reliable manpower and recruitment solutions designed to help businesses hire faster, smarter, and more efficiently."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/manpower-services"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Manpower & Placement Services" />
+        <meta
+          name="twitter:description"
+          content="Flexible staffing, recruitment, and payroll solutions from Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/manpower-services"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Manpower & Placement Services",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: "IN",
+              description:
+                "Professional manpower, staffing, recruitment, and payroll management services for businesses across multiple industries.",
+              serviceType: [
+                "Temporary Staffing",
+                "Permanent Recruitment",
+                "Contract Staffing",
+                "Payroll Management",
+              ],
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}

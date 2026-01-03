@@ -30,9 +30,10 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
 
   const isActive = (path: string) => pathname === path
 
+  // ✅ FIXED LOGOUT
   const handleLogout = () => {
-    // Mock logout
-    router.push('/admin/login')
+    localStorage.removeItem('isAdminLoggedIn') // clear auth
+    router.replace('/admin/login')             // redirect safely
   }
 
   return (
@@ -46,9 +47,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-card border-r transform transition-transform duration-300 lg:translate-x-0 ${
-        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}>
+      <div
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-card border-r transform transition-transform duration-300 lg:translate-x-0 ${
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         <div className="flex items-center justify-between h-16 px-6 border-b">
           <h2 className="text-xl font-bold text-primary">Admin Panel</h2>
           <Button

@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const EventManagement = () => {
   const services = [
     {
@@ -98,6 +98,86 @@ const EventManagement = () => {
 
   return (
     <>
+      <Head>
+        <title>Event Management Services | Pruthvi Enterprise</title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise provides professional event management services for corporate events, product launches, exhibitions, and celebrations with complete planning and execution."
+        />
+
+        <meta
+          name="keywords"
+          content="event management company, corporate event planner, product launch events, exhibition management, event services Gujarat, event organizers India"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Event Management Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="End-to-end event planning and execution for corporate, commercial, and celebration events with creativity and precision."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/event-management"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Event Management Services" />
+        <meta
+          name="twitter:description"
+          content="Professional event planning, production, and execution by Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/event-management"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Event Management Services",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: "IN",
+              description:
+                "End-to-end event management services including corporate events, product launches, exhibitions, and social celebrations.",
+              serviceType: [
+                "Corporate Events",
+                "Product Launches",
+                "Exhibitions & Trade Shows",
+                "Social & Celebration Events",
+              ],
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -105,9 +185,7 @@ const EventManagement = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -165,9 +243,7 @@ const EventManagement = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/event-management-1.jpg"
-                    }
+                    src={"/puruthvienterprise/event-management-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -188,9 +264,7 @@ const EventManagement = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/event-management-2.jpg"
-                  }
+                  src={"/puruthvienterprise/event-management-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />

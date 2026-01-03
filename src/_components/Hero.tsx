@@ -70,7 +70,7 @@ const Hero = () => {
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="https://www.instagram.com/dipeshkharsan/"
+                  href="https://www.instagram.com/pruthvi.enterprise?igsh=MTk1djQ5cGtxY2g="
                   target="_blank"
                   rel="nofollow"
                   className="text-gray-500 hover:text-primary"

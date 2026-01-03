@@ -28,7 +28,7 @@ import Footer from "@/_components/Footer";
 import Link from "next/link";
 import Testimonials from "@/_components/Testimonials";
 import LogoSection from "@/_components/LogoSection";
-
+import Head from "next/head";
 const FireSafety = () => {
   const services = [
     {
@@ -101,6 +101,87 @@ const FireSafety = () => {
 
   return (
     <>
+      <Head>
+        <title>Fire Safety Services | Pruthvi Enterprise</title>
+
+        <meta
+          name="description"
+          content="Pruthvi Enterprise offers complete fire safety services including audits, manpower, system installation, training, and compliance support for industrial and commercial workplaces."
+        />
+
+        <meta
+          name="keywords"
+          content="fire safety services, fire audit, fire safety manpower, fire system installation, fire NOC, safety compliance India, industrial fire safety"
+        />
+
+        <meta name="author" content="Pruthvi Enterprise" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Fire Safety Services – Pruthvi Enterprise"
+        />
+        <meta
+          property="og:description"
+          content="End-to-end fire safety solutions to help industries stay protected, compliant, and prepared for emergencies."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.pruthvienterprise.in/fire-safety"
+        />
+        <meta
+          property="og:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fire Safety Services" />
+        <meta
+          name="twitter:description"
+          content="Professional fire audits, manpower, installation, and compliance services by Pruthvi Enterprise."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.pruthvienterprise.in/puruthvienterprise/hero-img2.jpg"
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.pruthvienterprise.in/fire-safety"
+        />
+
+        {/* JSON-LD SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Fire Safety Services",
+              provider: {
+                "@type": "Organization",
+                name: "Pruthvi Enterprise",
+                url: "https://www.pruthvienterprise.in",
+              },
+              areaServed: "IN",
+              description:
+                "Complete fire safety solutions including fire audits, trained manpower, fire system installation, compliance documentation, and emergency response training.",
+              serviceType: [
+                "Fire Safety Manpower",
+                "Fire System Installation",
+                "Fire Audits",
+                "Compliance & Documentation",
+                "Safety Training & Emergency Response",
+              ],
+            }),
+          }}
+        />
+      </Head>
+
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
         {/* Hero Section */}
@@ -108,9 +189,7 @@ const FireSafety = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={
-                "/puruthvienterprise/bus-bg-img.jpg"
-              }
+              src={"/puruthvienterprise/bus-bg-img.jpg"}
               alt="Professional team collaboration"
               className="w-full h-full object-cover"
             />
@@ -169,9 +248,7 @@ const FireSafety = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                   <img
-                    src={
-                      "/puruthvienterprise/fire-safety-1.jpg"
-                    }
+                    src={"/puruthvienterprise/fire-safety-1.jpg"}
                     alt="Team collaboration"
                     className="relative rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -192,9 +269,7 @@ const FireSafety = () => {
               >
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
                 <img
-                  src={
-                    "/puruthvienterprise/fire-safety-2.jpg"
-                  }
+                  src={"/puruthvienterprise/fire-safety-2.jpg"}
                   alt="Modern office building"
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                 />
