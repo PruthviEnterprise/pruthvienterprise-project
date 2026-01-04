@@ -9,15 +9,12 @@ import {
 } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { 
-  ChevronLeft, 
-  ChevronRight, 
+import {  
   Search,
   ArrowUpDown,
   ArrowUp,
   ArrowDown,
-  Download,
-  Eye
+  Download
 } from 'lucide-react';
 import {
   Pagination,

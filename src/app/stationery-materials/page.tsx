@@ -16,12 +16,10 @@ import {
   Briefcase,
   Clock,
   Shield,
-  TrendingUp,
   CheckCircle,
   ArrowRight,
   Star,
   Award,
-  Target,
 } from "lucide-react";
 import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";

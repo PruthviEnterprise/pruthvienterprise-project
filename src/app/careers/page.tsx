@@ -1,6 +1,5 @@
 "use client";
 
-import { Container } from "@/components/ui/container";
 import { CareerForm } from "@/_components/careers/CareerForm";
 import { JobOpenings } from "@/_components/careers/JobOpenings";
 import { motion } from "framer-motion";

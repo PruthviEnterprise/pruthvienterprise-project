@@ -37,7 +37,7 @@ const testimonials = [
   {
     name: "Karan Singh",
     role: "Event Coordinator, Corporate Summit 2025",
-    image: "/puruthvienterprise/reviews/team-img-1-6.jpg",
+    image: "/puruthvienterprise/reviews/team-img-1-2.jpg",
     quote:
       "For our event, Pruthvi Enterprise managed everything from printing and outdoor ads to the full event setup. It was seamless, professional, and stress-free.",
     rating: 5,

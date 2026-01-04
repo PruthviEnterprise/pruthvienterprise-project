@@ -3,17 +3,12 @@
 import { useEffect } from "react";
 import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";
-import TeamSection from "@/_components/TeamSection";
-import TestimonialsSection from "@/_components/TestimonialsSection";
-import Image from "next/image";
 import {
   ChartLine,
   FileText,
   Wrench,
   Users,
   RotateCw,
-  ArrowRight,
-  Star,
   CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

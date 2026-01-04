@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";
-import Image from "next/image";
 import Head from "next/head";
 
 const Founder = () => {
