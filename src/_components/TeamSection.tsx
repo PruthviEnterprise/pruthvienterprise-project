@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Twitter, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const teamMembers = [
   {
@@ -50,9 +51,9 @@ export default function TeamSection() {
             <h4 className="font-semibold text-lg text-black dark:text-white mb-1">{member.name}</h4>
             <p className="text-sm text-muted-foreground mb-2">{member.role}</p>
             <div className="flex gap-2">
-              <a href="#" aria-label="LinkedIn"><Linkedin className="h-4 w-4 text-sky-500 hover:text-sky-700" /></a>
-              <a href="#" aria-label="Twitter"><Twitter className="h-4 w-4 text-sky-500 hover:text-sky-700" /></a>
-              <a href="#" aria-label="Mail"><Mail className="h-4 w-4 text-sky-500 hover:text-sky-700" /></a>
+              <Link href="#" aria-label="LinkedIn"><Linkedin className="h-4 w-4 text-sky-500 hover:text-sky-700" /></Link>
+              <Link href="#" aria-label="Twitter"><Twitter className="h-4 w-4 text-sky-500 hover:text-sky-700" /></Link>
+              <Link href="#" aria-label="Mail"><Mail className="h-4 w-4 text-sky-500 hover:text-sky-700" /></Link>
             </div>
           </div>
         ))}

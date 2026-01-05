@@ -1,6 +1,7 @@
-
+'use client'
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const stats = [
   { value: 98, symbol: "%", label: "Customer Satisfaction" },
@@ -78,12 +79,12 @@ const Stats = () => {
               Our team of experts works closely with each client to understand their
               unique challenges and develop customized solutions that drive real results.
             </p>
-            <a 
+            <Link
               href="#" 
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
               Learn more about our approach <ArrowUpRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

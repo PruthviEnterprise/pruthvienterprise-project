@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
   Bars3Icon,
-  XMarkIcon,
   MoonIcon,
   SunIcon,
 } from "@heroicons/react/24/solid";
@@ -55,7 +54,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-4 px-6 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
-          <a
+          <Link
             href="#"
             className="flex items-center text-lg font-semibold text-gray-900 dark:text-white"
           >
@@ -64,7 +63,7 @@ export default function Header() {
               alt="Zenith Logo"
               className="h-16 w-auto"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="flex">
@@ -97,7 +96,7 @@ export default function Header() {
                 className="w-64 bg-white dark:bg-gray-800 transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <a
+                  <Link
                     href="#"
                     className="text-lg font-semibold text-gray-900 dark:text-white"
                   >
@@ -106,28 +105,28 @@ export default function Header() {
                       alt="Zenith Logo"
                       className="h-8 w-auto"
                     />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-6 space-y-4">
-                  <a
+                  <Link
                     href="/"
                     className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors !border-b-2 !border-gray-400 py-2 ps-1.5 hover:!bg-[#15999F]"
                   >
                     Home
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/about"
                     className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors !border-b-2 !border-gray-400 py-2 ps-1.5 hover:!bg-[#15999F]"
                   >
                     About Us
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/founder"
                     className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors !border-b-2 !border-gray-400 py-2 ps-1.5 hover:!bg-[#15999F]"
                   >
                     Founder
-                  </a>
+                  </Link>
                   <div className="space-y-1">
                     {/* Parent Item */}
                     <button
@@ -145,98 +144,98 @@ export default function Header() {
                     {/* Submenu */}
                     {open && (
                       <div className="ms-3 flex flex-col space-y-1 animate-fadeIn">
-                        <a
+                        <Link
                           href="/manpower-services"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Manpower Services
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/event-management"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Event Management
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/fire-safety"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Fire Safety
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/health-supplies"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Health Supplies
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/furniture-materials"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Furniture Materials
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/electric-gadgets"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Electric Gadgets
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/stationery-materials"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Stationery Materials
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/media-marketing"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Media Marketing
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/video-production"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Video Production
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/design-printing"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Design Printing
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="/outdoor-ads"
                           className="block text-base font-normal text-gray-600 dark:text-gray-400 py-2 hover:bg-[#15999F] transition-colors rounded-md"
                         >
                           {" "}
                           └ Outdoor Ads
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
-                  <a
+                  <Link
                     href="/careers"
                     className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors !border-b-2 !border-gray-400 py-2 ps-1.5 hover:!bg-[#15999F]"
                   >
                     Careers
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/contact"
                     className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors !border-b-2 !border-gray-400 py-2 ps-1.5 hover:!bg-[#15999F]"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-6">

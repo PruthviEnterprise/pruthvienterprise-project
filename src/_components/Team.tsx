@@ -84,17 +84,7 @@ const Team = () => {
                   {member.bio}
                 </p>
                 
-                {/* <div className="flex space-x-3 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                  <a href="#" className="text-white hover:text-primary-foreground/80 transition-colors">
-                    <Linkedin size={18} />
-                  </a>
-                  <a href="#" className="text-white hover:text-primary-foreground/80 transition-colors">
-                    <Twitter size={18} />
-                  </a>
-                  <a href="#" className="text-white hover:text-primary-foreground/80 transition-colors">
-                    <Mail size={18} />
-                  </a>
-                </div> */}
+                
               </div>
             </div>
           ))}

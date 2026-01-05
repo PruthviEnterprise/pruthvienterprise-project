@@ -77,16 +77,7 @@ const DesignPrinting = () => {
     },
   ];
 
-  const industries = [
-    "Information Technology",
-    "Healthcare",
-    "Manufacturing",
-    "Finance & Banking",
-    "Retail & E-commerce",
-    "Construction",
-    "Hospitality",
-    "Education",
-  ];
+  
 
   const stats = [
     { number: "7000+", label: "Design Projects Completed" },

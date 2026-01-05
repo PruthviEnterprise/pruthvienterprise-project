@@ -8,6 +8,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";
 import Head from "next/head";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -141,12 +142,12 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">Phone</h3>
-                  <a
+                  <Link
                     href="tel:+15550000000"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     +1 (555) 000-0000
-                  </a>
+                  </Link>
                 </motion.div>
 
                 <motion.div
@@ -159,12 +160,12 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <a
+                  <Link
                     href="mailto:hello@company.com"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     hello@company.com
-                  </a>
+                  </Link>
                 </motion.div>
 
                 <motion.div
