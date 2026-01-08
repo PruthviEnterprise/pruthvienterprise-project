@@ -80,40 +80,47 @@ export const CareerForm = () => {
     // }
   };
 
-  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
-    try {
-      const result = await uploadResume(fileData); // pass FormData, not Object URL
-
-      const formBody = {
-        ...values,
-        resume: result?.url,
-      };
-
-      const response = await fetch("/api/careers", {
-        method: "POST",
-        body: JSON.stringify(formBody),
+ const handleSubmit = async (values: z.infer<typeof formSchema>) => {
+  try {
+    if (!fileData) {
+      toast.warning("Resume required", {
+        description: "Please upload your resume before submitting.",
       });
-
-      const responseData = await response.json();
-
-      if (!response.ok)
-        throw new Error(responseData.message || "Failed to submit");
-
-      toast.success("Success", {
-        description: "Your application has been submitted!",
-      });
-
-      setFileData(null);
-
-      form.reset();
-      setFile(null);
-    } catch (error) {
-      console.error("Submission error:", error); // Debug log
-      toast.warning("Error", {
-        description: "Something went wrong. Try again.",
-      });
+      return;
     }
-  };
+
+    const result = await uploadResume(fileData);
+
+    const formBody = {
+      ...values,
+      resume: result?.url,
+    };
+
+    const response = await fetch("/api/careers", {
+      method: "POST",
+      body: JSON.stringify(formBody),
+    });
+
+    const responseData = await response.json();
+
+    if (!response.ok)
+      throw new Error(responseData.message || "Failed to submit");
+
+    toast.success("Success", {
+      description: "Your application has been submitted!",
+    });
+
+    setFileData(null);
+    setFile(null);
+    form.reset();
+  } catch (error) {
+    console.error("Submission error:", error);
+    toast.warning("Error", {
+      description: "Something went wrong. Try again.",
+    });
+  }
+};
+
 
   return (
     <motion.div
